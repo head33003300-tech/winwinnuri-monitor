@@ -317,7 +317,7 @@
   // notices.json 읽기 — GitHub Actions가 1시간마다 갱신해서 커밋합니다.
   async function load(){
     try {
-      const res = await fetch(`notices.json?t=${Date.now()}`, { cache: 'no-store' });
+      const res = await fetch(`https://wn-test.head33003300.workers.dev/?t=${Date.now()}`, { cache: 'no-store' });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const data = await res.json();
 
