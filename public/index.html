@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>상생누리 신호 — ESG·스마트공장·혁신파트너십 신청중 공고</title>
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/ibm-plex-mono@5.0.13/index.css">
+<style>
+  :root{
+    --bg: #f6f8f6;
+    --surface: #ffffff;
+    --surface-2: #eef4f0;
+    --line: #dde6e0;
+    --signal: #168763;
+    --signal-dim: #6fbea3;
+    --amber: #a06a1c;
+    --text: #17231d;
+    --text-muted: #5c7268;
+    --text-faint: #93a89c;
+    --radius: 10px;
+  }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html,body{ background:var(--bg); color:var(--text); }
+  body{
+    font-family:'Pretendard', -apple-system, sans-serif;
+    min-height:100vh;
+    background-image:
+      radial-gradient(circle at 15% -10%, rgba(79,216,174,0.08), transparent 45%),
+      radial-gradient(circle at 100% 0%, rgba(242,184,75,0.05), transparent 40%);
+  }
+  .mono{ font-family:'IBM Plex Mono', monospace; }
+  a{ color:inherit; text-decoration:none; }
+
+  .topbar{
+    border-bottom:1px solid var(--line);
+    padding:22px 28px 20px;
+    display:flex; align-items:flex-end; justify-content:space-between; gap:20px;
+    flex-wrap:wrap;
+  }
+  .brand-eyebrow{
+    font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:.18em;
+    color:var(--signal); text-transform:uppercase; margin-bottom:6px; display:flex; align-items:center; gap:8px;
+  }
+  .dot{
+    width:7px; height:7px; border-radius:50%; background:var(--signal);
+    box-shadow:0 0 0 0 rgba(79,216,174,.6);
+    animation:pulse 2s infinite;
+  }
+  @keyframes pulse{
+    0%{ box-shadow:0 0 0 0 rgba(79,216,174,.55); }
+    70%{ box-shadow:0 0 0 8px rgba(79,216,174,0); }
+    100%{ box-shadow:0 0 0 0 rgba(79,216,174,0); }
+  }
+  h1{ font-size:22px; font-weight:700; letter-spacing:-.01em; }
+  .sync-status{
+    font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--text-muted);
+    text-align:right; line-height:1.6;
+  }
+  .sync-status b{ color:var(--text); font-weight:600; }
+
+  .controls{
+    padding:20px 28px; display:flex; gap:14px; align-items:center; flex-wrap:wrap;
+    border-bottom:1px solid var(--line);
+  }
+  .search-wrap{
+    position:relative; flex:1 1 260px; min-width:220px;
+  }
+  .search-wrap input{
+    width:100%; background:var(--surface); border:1px solid var(--line); color:var(--text);
+    padding:11px 14px 11px 34px; border-radius:var(--radius); font-size:14px; font-family:inherit;
+    outline:none; transition:border-color .15s;
+  }
+  .search-wrap input:focus{ border-color:var(--signal-dim); }
+  .search-wrap svg{ position:absolute; left:11px; top:50%; transform:translateY(-50%); opacity:.5; }
+  .chips{ display:flex; gap:8px; flex-wrap:wrap; }
+  .chip{
+    font-family:'IBM Plex Mono', monospace; font-size:12px; padding:9px 14px; border-radius:999px;
+    border:1px solid var(--line); background:var(--surface); color:var(--text-muted);
+    cursor:pointer; transition:all .15s; user-select:none; white-space:nowrap;
+  }
+  .chip:hover{ border-color:var(--signal-dim); color:var(--text); }
+  .chip.active{ background:rgba(79,216,174,0.12); border-color:var(--signal); color:var(--signal); }
+  .status-pill{
+    margin-left:auto; font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:.06em;
+    color:var(--amber); border:1px solid rgba(242,184,75,.35); background:rgba(242,184,75,.08);
+    padding:8px 12px; border-radius:999px; white-space:nowrap;
+  }
+
+  main{ padding:24px 28px 60px; max-width:960px; margin:0 auto; }
+  .count-row{
+    font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--text-faint);
+    margin-bottom:16px; display:flex; justify-content:space-between;
+  }
+  .grid{ display:flex; flex-direction:column; gap:12px; }
+
+  .card{
+    background:var(--surface); border:1px solid var(--line); border-radius:var(--radius);
+    padding:18px 20px; position:relative; overflow:hidden;
+    display:grid; grid-template-columns:1fr auto; gap:14px; align-items:center;
+    transition:border-color .15s, transform .15s, box-shadow .15s;
+    box-shadow:0 1px 2px rgba(23,35,29,0.04);
+  }
+  .card::before{
+    content:''; position:absolute; left:0; top:0; bottom:0; width:2px; background:var(--signal-dim);
+  }
+  .card:hover{ border-color:var(--signal-dim); transform:translateX(2px); box-shadow:0 4px 10px rgba(23,35,29,0.06); }
+  .card-main{ min-width:0; }
+  .biz-name{ font-size:16px; font-weight:600; line-height:1.45; margin-bottom:8px; word-break:keep-all; }
+  .biz-name mark{
+    background:transparent; color:var(--signal); font-weight:700;
+    border-bottom:1px solid var(--signal-dim);
+  }
+  .meta-row{
+    display:flex; flex-wrap:wrap; gap:6px 14px; font-size:12.5px; color:var(--text-muted);
+  }
+  .meta-row span{ display:inline-flex; align-items:center; gap:5px; }
+  .meta-row .label{ color:var(--text-faint); font-family:'IBM Plex Mono', monospace; font-size:10.5px; letter-spacing:.05em; }
+  .dday{
+    font-family:'IBM Plex Mono', monospace; font-size:11px; padding:2px 8px; border-radius:5px;
+    background:rgba(242,184,75,.1); color:var(--amber); border:1px solid rgba(242,184,75,.25);
+  }
+  .dday.urgent{ background:rgba(196,58,58,.1); color:#b53a3a; border-color:rgba(196,58,58,.3); }
+
+  .card-action{
+    display:flex; align-items:center; gap:10px;
+  }
+  .btn-detail{
+    font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--bg); background:var(--signal);
+    padding:9px 14px; border-radius:7px; white-space:nowrap; font-weight:600;
+    display:inline-flex; align-items:center; gap:6px; transition:opacity .15s;
+  }
+  .btn-detail:hover{ opacity:.85; }
+
+  .empty{
+    text-align:center; padding:80px 20px; color:var(--text-muted);
+  }
+  .empty .glyph{ font-size:34px; margin-bottom:14px; opacity:.5; font-family:'IBM Plex Mono', monospace; color:var(--signal-dim); }
+  .empty p{ font-size:14px; line-height:1.7; }
+
+  .skeleton{
+    background:var(--surface); border:1px solid var(--line); border-radius:var(--radius);
+    padding:18px 20px; height:78px;
+    background-image:linear-gradient(90deg, var(--surface) 0%, var(--surface-2) 50%, var(--surface) 100%);
+    background-size:200% 100%; animation:shimmer 1.6s infinite;
+  }
+  @keyframes shimmer{ 0%{background-position:200% 0;} 100%{background-position:-200% 0;} }
+
+  footer{
+    text-align:center; padding:30px 20px 40px; font-family:'IBM Plex Mono', monospace;
+    font-size:11px; color:var(--text-faint); letter-spacing:.04em;
+  }
+
+  @media(max-width:560px){
+    .topbar{ flex-direction:column; align-items:flex-start; }
+    .sync-status{ text-align:left; }
+    .card{ grid-template-columns:1fr; }
+    .card-action{ justify-content:flex-start; }
+    .status-pill{ margin-left:0; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div>
+    <div class="brand-eyebrow"><span class="dot"></span> LIVE MONITOR</div>
+    <h1>상생누리 신호</h1>
+  </div>
+  <div class="sync-status">
+    마지막 확인 <b id="lastSync">—</b><br>
+    <span id="totalCount">0</span>건 수신 · 1시간 주기 자동 갱신
+  </div>
+</div>
+
+<div class="controls">
+  <div class="search-wrap">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <input id="searchInput" type="text" placeholder="사업명으로 추가 검색…">
+  </div>
+  <div class="chips" id="keywordChips">
+    <div class="chip active" data-kw="ESG">ESG</div>
+    <div class="chip active" data-kw="스마트공장">스마트공장</div>
+    <div class="chip active" data-kw="혁신파트너십">혁신파트너십</div>
+  </div>
+  <div class="status-pill">신청중만 표시</div>
+</div>
+
+<main>
+  <div class="count-row">
+    <span id="resultCount">불러오는 중…</span>
+    <span>정렬: 공고 마감 임박순</span>
+  </div>
+  <div class="grid" id="grid">
+    <div class="skeleton"></div>
+    <div class="skeleton"></div>
+    <div class="skeleton"></div>
+  </div>
+</main>
+
+<footer>WINWINNURI.OR.KR 비공식 실시간 수집 · 상세 내용은 원본 페이지 기준</footer>
+
+<script>
+  const KEYWORDS = ["ESG", "스마트공장", "혁신파트너십"];
+  let allDocs = [];
+  let activeKw = new Set(KEYWORDS);
+  let searchTerm = "";
+
+  const grid = document.getElementById('grid');
+  const resultCount = document.getElementById('resultCount');
+  const totalCount = document.getElementById('totalCount');
+  const lastSync = document.getElementById('lastSync');
+
+  document.getElementById('keywordChips').addEventListener('click', (e) => {
+    const chip = e.target.closest('.chip');
+    if (!chip) return;
+    const kw = chip.dataset.kw;
+    if (activeKw.has(kw)) { activeKw.delete(kw); chip.classList.remove('active'); }
+    else { activeKw.add(kw); chip.classList.add('active'); }
+    render();
+  });
+
+  document.getElementById('searchInput').addEventListener('input', (e) => {
+    searchTerm = e.target.value.trim().toLowerCase();
+    render();
+  });
+
+  function normalize(s){ return (s || '').replace(/\s+/g, ''); }
+
+  function matchedKeyword(bizNm){
+    const n = normalize(bizNm);
+    return KEYWORDS.find(kw => activeKw.has(kw) && n.includes(normalize(kw)));
+  }
+
+  function ymdToDate(ymd){
+    if (!ymd) return null;
+    const s = String(ymd).replace(/[^0-9]/g, '');
+    if (s.length < 8) return null;
+    return new Date(`${s.slice(0,4)}-${s.slice(4,6)}-${s.slice(6,8)}T23:59:59`);
+  }
+
+  function ddayLabel(notiEdYmd){
+    const end = ymdToDate(notiEdYmd);
+    if (!end) return null;
+    const diff = Math.ceil((end - new Date()) / 86400000);
+    if (diff < 0) return { text: '마감', urgent: false };
+    if (diff === 0) return { text: 'D-DAY', urgent: true };
+    return { text: `D-${diff}`, urgent: diff <= 3 };
+  }
+
+  function fmtYmd(ymd){
+    if (!ymd) return '-';
+    const s = String(ymd).replace(/[^0-9]/g, '');
+    if (s.length < 8) return String(ymd);
+    return `${s.slice(0,4)}.${s.slice(4,6)}.${s.slice(6,8)}`;
+  }
+
+  function detailUrl(bizId, prgId){
+    return `https://www.winwinnuri.or.kr/pg/businessView.do?prgIdH=${prgId}&bizIdH=${bizId}`;
+  }
+
+  function escapeHtml(s){
+    return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  }
+
+  function highlight(text, kw){
+    if (!kw) return text;
+    const idx = text.indexOf(kw);
+    if (idx === -1) return text;
+    return text.slice(0, idx) + '<mark>' + text.slice(idx, idx + kw.length) + '</mark>' + text.slice(idx + kw.length);
+  }
+
+  function render(){
+    const filtered = allDocs
+      .map(d => ({ ...d, _kw: matchedKeyword(d.bizNm) }))
+      .filter(d => d._kw && normalize(d.bizNm).toLowerCase().includes(normalize(searchTerm).toLowerCase()))
+      .sort((a, b) => {
+        const da = ymdToDate(a.notiEdYmd) || new Date(8640000000000000);
+        const db = ymdToDate(b.notiEdYmd) || new Date(8640000000000000);
+        return da - db;
+      });
+
+    resultCount.textContent = `${filtered.length}건 표시 중`;
+
+    if (filtered.length === 0) {
+      grid.innerHTML = `
+        <div class="empty">
+          <div class="glyph">— · —</div>
+          <p>조건에 맞는 신청중 공고가 아직 없습니다.<br>키워드를 늘리거나 검색어를 지워보세요.</p>
+        </div>`;
+      return;
+    }
+
+    grid.innerHTML = filtered.map(d => {
+      const dd = ddayLabel(d.notiEdYmd);
+      const ddayHtml = dd ? `<span class="dday ${dd.urgent ? 'urgent' : ''}">${dd.text}</span>` : '';
+      return `
+      <div class="card">
+        <div class="card-main">
+          <div class="biz-name">${highlight(escapeHtml(d.bizNm || '(사업명 없음)'), d._kw)}</div>
+          <div class="meta-row">
+            <span><span class="label">기간</span> ${fmtYmd(d.notiStYmd)} – ${fmtYmd(d.notiEdYmd)} ${ddayHtml}</span>
+            <span><span class="label">지역</span> ${escapeHtml(d.bizArea || '전국')}</span>
+            <span><span class="label">운영</span> ${escapeHtml(d.membrCorpNm || '-')}</span>
+          </div>
+        </div>
+        <div class="card-action">
+          <a class="btn-detail" href="${detailUrl(d.bizId, d.prgId)}" target="_blank" rel="noopener">
+            자세히 보기 ↗
+          </a>
+        </div>
+      </div>`;
+    }).join('');
+  }
+
+  // notices.json 읽기 — GitHub Actions가 1시간마다 갱신해서 커밋합니다.
+  async function load(){
+    try {
+      const res = await fetch(`notices.json?t=${Date.now()}`, { cache: 'no-store' });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const data = await res.json();
+
+      allDocs = Array.isArray(data.notices) ? data.notices : [];
+      totalCount.textContent = allDocs.length;
+
+      if (data.updatedAt) {
+        lastSync.textContent = new Date(data.updatedAt).toLocaleString('ko-KR', {
+          month:'2-digit', day:'2-digit', hour:'2-digit', minute:'2-digit'
+        });
+      } else {
+        lastSync.textContent = '수집 전';
+      }
+
+      render();
+    } catch (error) {
+      grid.innerHTML = `
+        <div class="empty">
+          <div class="glyph">! ! !</div>
+          <p>공고 목록을 불러오지 못했습니다.<br>notices.json 파일이 배포되었는지 확인해주세요.<br>
+          <span class="mono" style="font-size:11px;">${escapeHtml(error.message)}</span></p>
+        </div>`;
+    }
+  }
+
+  load();
+  // 탭을 열어둔 채로도 최신 상태를 받도록 10분마다 다시 확인
+  setInterval(load, 10 * 60 * 1000);
+</script>
+</body>
+</html>
