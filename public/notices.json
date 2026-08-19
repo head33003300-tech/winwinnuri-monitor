@@ -1,12 +1,26 @@
 {
-  "updatedAt": "2026-08-19T00:50:10.225Z",
+  "updatedAt": "2026-08-19T05:39:33.758Z",
   "keywords": [
     "ESG",
     "스마트공장",
     "혁신파트너십"
   ],
-  "count": 44,
+  "count": 46,
   "notices": [
+    {
+      "bizId": "35467",
+      "prgId": "9357",
+      "bizNm": "2026년도 협력사 및 중소기업 ESG 지원사업 참여기업 추가모집 공고",
+      "prgNm": "중소기업 ESG경영 지원사업 ",
+      "applyStepNm": "신청중",
+      "progStepCodNm": "모집중",
+      "notiStYmd": "2026-08-18",
+      "notiEdYmd": "2026-08-20",
+      "bizArea": "전국",
+      "bizAreaSecdNm": "컨설팅지원",
+      "membrCorpNm": "한전원자력연료주식회사",
+      "matchedKeyword": "ESG"
+    },
     {
       "bizId": "35407",
       "prgId": "16054",
@@ -358,6 +372,20 @@
       "matchedKeyword": "ESG"
     },
     {
+      "bizId": "34253",
+      "prgId": "16415",
+      "bizNm": "'26년 3/4분기 현대차그룹 공급망 ESG 서면 실사 실무",
+      "prgNm": "'26년 3/4분기 현대차그룹 공급망 ESG 서면 실사 실무",
+      "applyStepNm": "신청중",
+      "progStepCodNm": "모집중",
+      "notiStYmd": "2026-07-01",
+      "notiEdYmd": "2026-09-20",
+      "bizArea": "전국",
+      "bizAreaSecdNm": "교육지원",
+      "membrCorpNm": "현대자동차",
+      "matchedKeyword": "ESG"
+    },
+    {
       "bizId": "34286",
       "prgId": "16447",
       "bizNm": "'26년 3/4분기 현대차그룹 공급망 ESG 서면 실사 실무",
@@ -372,17 +400,17 @@
       "matchedKeyword": "ESG"
     },
     {
-      "bizId": "34253",
-      "prgId": "16415",
-      "bizNm": "'26년 3/4분기 현대차그룹 공급망 ESG 서면 실사 실무",
-      "prgNm": "'26년 3/4분기 현대차그룹 공급망 ESG 서면 실사 실무",
+      "bizId": "34287",
+      "prgId": "16448",
+      "bizNm": "'26년 3/4분기 현대차그룹 공급망 ESG 현장 실사 실무",
+      "prgNm": "'26년 3/4분기 현대차그룹 (대중소아카데미)6. 공급망 ESG 현장 실사 실무",
       "applyStepNm": "신청중",
       "progStepCodNm": "모집중",
       "notiStYmd": "2026-07-01",
       "notiEdYmd": "2026-09-20",
       "bizArea": "전국",
       "bizAreaSecdNm": "교육지원",
-      "membrCorpNm": "현대자동차",
+      "membrCorpNm": "기아(주)",
       "matchedKeyword": "ESG"
     },
     {
@@ -400,10 +428,10 @@
       "matchedKeyword": "ESG"
     },
     {
-      "bizId": "34287",
-      "prgId": "16448",
-      "bizNm": "'26년 3/4분기 현대차그룹 공급망 ESG 현장 실사 실무",
-      "prgNm": "'26년 3/4분기 현대차그룹 (대중소아카데미)6. 공급망 ESG 현장 실사 실무",
+      "bizId": "34285",
+      "prgId": "16446",
+      "bizNm": "'26년 3/4분기 현대차그룹 자동차 산업의 공급망 ESG 관리 실무",
+      "prgNm": "'26년 3/4분기 현대차그룹 자동차 산업의 공급망 ESG 관리 실무",
       "applyStepNm": "신청중",
       "progStepCodNm": "모집중",
       "notiStYmd": "2026-07-01",
@@ -428,17 +456,17 @@
       "matchedKeyword": "ESG"
     },
     {
-      "bizId": "34285",
-      "prgId": "16446",
-      "bizNm": "'26년 3/4분기 현대차그룹 자동차 산업의 공급망 ESG 관리 실무",
-      "prgNm": "'26년 3/4분기 현대차그룹 자동차 산업의 공급망 ESG 관리 실무",
+      "bizId": "35495",
+      "prgId": "17027",
+      "bizNm": "2026년 의료기관 ESG경영 우수사례 및 아이디어 공모",
+      "prgNm": "2026년 의료기관 ESG경영 우수사례 및 아이디어 공모",
       "applyStepNm": "신청중",
       "progStepCodNm": "모집중",
-      "notiStYmd": "2026-07-01",
-      "notiEdYmd": "2026-09-20",
+      "notiStYmd": "2026-08-18",
+      "notiEdYmd": "2026-09-21",
       "bizArea": "전국",
-      "bizAreaSecdNm": "교육지원",
-      "membrCorpNm": "기아(주)",
+      "bizAreaSecdNm": "기타지원",
+      "membrCorpNm": "한국보건산업진흥원",
       "matchedKeyword": "ESG"
     },
     {
